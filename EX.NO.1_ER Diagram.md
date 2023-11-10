@@ -1,76 +1,93 @@
-# EXP NO 1: ER DIAGRAM CREATION, RELATIONAL MODEL AND SCHEMA GENERATION 
-
-### DATE : 9/08/23
+# EXP NO 2: DATA DEFINITION LANGUGE COMMANDS 
+### DATE : 16/08/23
 
 ## AIM:
-<div align="justify">
-   To create a ER Diagram for Bank management system or College management system using ERD Plus tool and generate the relational model with schema. 
-</div>
+To create a student database and execute DDL queries using SQL.
 
 
-## Algorithm
-1. Create a login with https://erdplus.com.
-2. Create a new ER Diagram with name
-3. Create a strong entity, relation and attributes.
-4. Create a weak entity, relation and attributes.
-5. Specify attributes unique, multivalued and composite attributes.
+## THEORY
+### DDL (Data Definition Language)
+
+* DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema.
+* It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database.
+* DDL is a set of SQL commands used to create, modify, and delete database structures but not data.
+* These commands are normally not used by a general user, who should be accessing the database via an application.
+
+ 
+### List of DDL commands: 
+1. CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
+2. DROP: This command is used to delete objects from the database.
+3. ALTER: This is used to alter the structure of the database.
+4. TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+5. RENAME: This is used to rename an object existing in the database.
 
 
+## Query:
+### 1) Create a database studentdb
 
-### ER Diagram 
-
-![Bank_ER](https://github.com/AnnBlessy/DBMS/assets/119477835/8133347a-e969-4410-8fe7-38bb225ff6c7)
-
-
-### Relational model
-
-![image](https://github.com/AnnBlessy/DBMS/assets/119477835/c109e44e-a08e-434e-a24d-7cd99020f294)
-
-
-### SQL DDL Schema 
+### SQL QUERY:
 ```
-CREATE TABLE BANK
-(
-  Code INT NOT NULL,
-  Name INT NOT NULL,
-  Addr INT NOT NULL,
-  PRIMARY KEY (Code)
-);
-
-CREATE TABLE BANK_BRANCH
-(
-  Branch_no INT NOT NULL,
-  Addr INT NOT NULL,
-  PRIMARY KEY (Branch_no)
-);
-
-CREATE TABLE LOAN
-(
-  Loan_no INT NOT NULL,
-  Amount INT NOT NULL,
-  Type INT NOT NULL,
-  PRIMARY KEY (Loan_no)
-);
-
-CREATE TABLE CUSTOMER
-(
-  Phone INT NOT NULL,
-  Ssn INT NOT NULL,
-  Name INT NOT NULL,
-  Addr INT NOT NULL,
-  PRIMARY KEY (Ssn)
-);
-
-CREATE TABLE ACCOUNT
-(
-  Acct_no INT NOT NULL,
-  Balance INT NOT NULL,
-  Type INT NOT NULL,
-  PRIMARY KEY (Acct_no)
-);
+create database studentdbb;
 ```
 
-## RESULT 
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/58fc5109-3fe3-4b71-adfa-c8de97a3eb0c)
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/a4e4ad5f-3b5d-4d4c-b347-54957dca3420)
+
+### 2) Create a table student  and insert any two rows with the following fieds RegisterNumber,Name,Age,Address,Phone number
+
+### SQL QUERY: 
+```
+ create table student(RegisterNumber int,Name varchar(100),Age int,Address varchar(250),PhoneNumber int) ;
+```
+
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/2ed4d00e-5741-4f71-a0d2-0384650e6dae)
+
+
+### 3) Alter the above student table by adding another attribute department
+
+### SQL QUERY: 
+```
+ alter table student add dept varchar(20);
+```
+
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/0d709df7-9e80-4b2c-a358-dac94a29b6fa)
+
+
+### 4) Rename the student table to mystudent
+
+### SQL QUERY: 
+```
+rename table student to mystudent;
+```
+
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/331990e2-babb-47a7-8576-d71ef8928eb3)
+
+
+### 5) Delete the mystudent rows using truncate keyword
+
+### SQL QUERY: 
+```
+ truncate table mystudent;
+```
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/73984590-23c6-4463-bb92-bfd6325824df)
+
+### 4) Drop the mystudent table
+ 
+### SQL QUERY: 
+```
+ drop table mystudent;
+```
+
+### OUTPUT:
+![image](https://github.com/sabithapaulraj/DBMS/assets/118343379/f798b751-c946-4215-83de-d22ebf9c9d73)
+
+
+## Result:
 <div align="justify">
-Thus the ER diagram was drawn and relational diagram, SQL DDL staements are generated using ERD plus tool.
+       Thus the basic DDL commands in SQL are executed.
 </div>
